@@ -24,8 +24,8 @@ Requirement.create(name: 'Leadership', description: 'Being leaders in the campus
 
 d = DateTime.new(2017,11,19,8,37,48,"-06:00")
 Event.create(name: 'Trash pick up', date: d, total_hours: 10.0, id_req: 1)
-Participation.create(id_user: 1, id_Event: 1, hours: 6.00)
-Participation.create(id_user: 2, id_Event: 1, hours: 4.00)
+Participation.create(id_user: 1, id_event: 1, hours: 6.00)
+Participation.create(id_user: 2, id_event: 1, hours: 4.00)
 
 
 
