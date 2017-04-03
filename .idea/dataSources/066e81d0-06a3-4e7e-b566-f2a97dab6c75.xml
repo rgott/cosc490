@@ -111,7 +111,7 @@
       <Position>1</Position>
       <DataType>INTEGER(0,-1)|4</DataType>
     </column>
-    <column id="36" parent="6" name="id_Event">
+    <column id="36" parent="6" name="id_event">
       <Position>2</Position>
       <DataType>INTEGER(0,-1)|4</DataType>
     </column>
