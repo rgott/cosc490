@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date: 2017-04-02 22:38:24
+  total_hours: 
+  id_req: 1
+
+two:
+  name: MyString
+  date: 2017-04-02 22:38:24
+  total_hours: 
+  id_req: 1
