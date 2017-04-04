@@ -14,9 +14,22 @@
     <% @requirement.each do |r| %>
     <li class="list-group-item">
       <span class="label label-default">1.1</span>
-      <span class="description"><%= r %></span>
-      <!-- TODO change badge color class based on % completion -->
-      <span class="badge badge-success badge-pill">2/8</span>
+      <span class="description"><%= r.name %></span>
+
+      <%
+        #compute label color
+        percentComplete = r.amt_completed.to_f/r.amt_goal
+
+        percentCompleteColor = "label-success"
+        if percentComplete < 0.33 then
+          percentCompleteColor = "label-error"
+        elsif percentComplete < 0.66 then
+          percentCompleteColor = "label-warning"
+        end
+      %>
+      <div class="label pull-right <%= percentCompleteColor %> completionElement">
+        <%= r.amt_completed.truncate %>/<%= r.amt_goal.truncate %>
+      </div>
     </li>
     <% end %>
   </ul>

@@ -1,5 +1,6 @@
 class MainController < ApplicationController
   def index
-    @requirement = %w(ServiceHours More Stuff To Look At For This Demo Step)
+
+    @requirement = Requirement.all
   end
 end

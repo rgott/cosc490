@@ -5,6 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+School.delete_all
+Group.delete_all
+User.delete_all
+Role.delete_all
+Event.delete_all
+SchoolAndGroup.delete_all
+UserAndRole.delete_all
+UserAndGroup.delete_all
+Requirement.delete_all
+Participation.delete_all
+
 
 School.create(name: 'Towson University')
 Group.create(name: 'Alpha Beta Delta')

@@ -23,14 +23,8 @@
   height: 100vh;
   padding: 25px;
   float: left;
-  .list-group {
-    .list-group-item {
-      .description {
-      }
-      .badge {
-        width: 60px;
-        background-color: #4BB543;
-      }
-    }
-  }
+}
+.completionElement
+{
+  width: 60px;
 }
