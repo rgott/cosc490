@@ -35,6 +35,9 @@ UserAndRole.create(id_user: 2, id_role: 2)
 
 Requirement.create(name: 'Service Hours', description: 'Do some service now, ya hear', amt_completed: 10.00, amt_goal: 20.00)
 Requirement.create(name: 'Leadership', description: 'Being leaders in the campus community', amt_completed: 3.00, amt_goal: 5.00)
+Requirement.create(name: 'Service Hours', description: 'Do some service now, ya hear', amt_completed: 1.00, amt_goal: 20.00)
+Requirement.create(name: 'Leadership', description: 'Being leaders in the campus community', amt_completed: 5.00, amt_goal: 5.00)
+
 
 d = DateTime.new(2017,11,19,8,37,48,"-06:00")
 Event.create(name: 'Trash pick up', date: d, total_hours: 10.0, id_req: 1)
