@@ -2,8 +2,8 @@
 
 one:
   id_group: 1
-  id_role: 1
+  id_user: 1
 
 two:
   id_group: 1
-  id_role: 1
+  id_user: 1

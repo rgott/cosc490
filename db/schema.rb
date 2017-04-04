@@ -13,12 +13,8 @@
 
 ActiveRecord::Schema.define(version: 20170404010512) do
 
-  create_table "event_and_groups", force: :cascade do |t|
-    t.integer  "id_event"
-    t.integer  "id_group"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -27,14 +23,6 @@ ActiveRecord::Schema.define(version: 20170404010512) do
     t.integer  "id_req"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-  end
-
-  create_table "group_and_users", force: :cascade do |t|
-    t.integer  "id_group"
-    t.integer  "id_user"
-    t.integer  "id_role"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "groups", force: :cascade do |t|
@@ -81,7 +69,7 @@ ActiveRecord::Schema.define(version: 20170404010512) do
 
   create_table "user_and_groups", force: :cascade do |t|
     t.integer  "id_group"
-    t.integer  "id_role"
+    t.integer  "id_user"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
