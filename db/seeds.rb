@@ -16,8 +16,11 @@ Role.create(name: 'officer')
 Role.create(name: 'admin')
 
 SchoolAndGroup.create(id_school: 1, id_group: 1)
-GroupAndUser.create(id_group: 1, id_user: 1, id_role: 1)
-GroupAndUser.create(id_group: 1, id_user: 2, id_role: 2)
+UserAndGroup.create(id_group: 1, id_user: 1)
+UserAndGroup.create(id_group: 1, id_user: 2)
+
+UserAndRole.create(id_user: 1, id_role: 1)
+UserAndRole.create(id_user: 2, id_role: 2)
 
 Requirement.create(name: 'Service Hours', description: 'Do some service now, ya hear', amt_completed: 10.00, amt_goal: 20.00)
 Requirement.create(name: 'Leadership', description: 'Being leaders in the campus community', amt_completed: 3.00, amt_goal: 5.00)
