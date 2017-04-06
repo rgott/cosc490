@@ -15,23 +15,17 @@
     <li class="list-group-item">
       <span class="label label-default">1.1</span>
       <span class="description"><%= r.name %></span>
-
-      <%
-        #compute label color
-        percentComplete = r.amt_completed.to_f/r.amt_goal
-
-        percentCompleteColor = "label-success"
-        if percentComplete < 0.33 then
-          percentCompleteColor = "label-danger"
-        elsif percentComplete < 0.66 then
-          percentCompleteColor = "label-warning"
-        end
-      %>
-      <div class="label pull-right <%= percentCompleteColor %> completionElement">
-        <%= r.amt_completed.truncate %>/<%= r.amt_goal.truncate %>
+      <div class="pull-right circularProgressBorder">
+        <div class="pull-right">
+          <%
+            percentComplete	= r.amt_completed.to_f/r.amt_goal
+          %>
+          <div class="circularProgress --<%= (percentComplete * 100).to_i %> pull-right">
+            <div class="circularProgress__overlay"></div>
+          </div>
+        </div>
+        <p class="pull-right"><%= r.amt_completed.truncate %>/<%= r.amt_goal.truncate %>&nbsp;</p>&nbsp;
       </div>
-    </li>
-    <% end %>
+  <% end %>
   </ul>
-
 </div>
