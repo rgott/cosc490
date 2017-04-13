@@ -10,39 +10,36 @@ Group.delete_all
 User.delete_all
 Role.delete_all
 Event.delete_all
-SchoolAndGroup.delete_all
-UserAndRole.delete_all
-UserAndGroup.delete_all
 Requirement.delete_all
 Participation.delete_all
 
 
 School.create(name: 'Towson University')
-Group.create(name: 'Alpha Beta Delta')
-User.create(name_first: 'Alto', name_last: 'Bravo', username: 'AL123', password: 'abc123', email: 'student1@gmail.com')
-User.create(name_first: 'Charlie', name_last: 'Decker', username: 'Char', password: 'def456', email: 'student2@gmail.com')
+
+Group.create(school_id: '1', name: 'Alpha Beta Delta')
 
 Role.create(name: 'member')
 Role.create(name: 'officer')
 Role.create(name: 'admin')
 
-SchoolAndGroup.create(id_school: 1, id_group: 1)
-UserAndGroup.create(id_group: 1, id_user: 1)
-UserAndGroup.create(id_group: 1, id_user: 2)
+User.create(role_id: '1', group_id: '1', first_name: 'Alto', last_name: 'Bravo', username: 'AL123', password: 'abc123', email: 'student1@gmail.com')
+User.create(role_id: '2', group_id: '1', first_name: 'Charlie', last_name: 'Decker', username: 'Char', password: 'def456', email: 'student2@gmail.com')
 
-UserAndRole.create(id_user: 1, id_role: 1)
-UserAndRole.create(id_user: 2, id_role: 2)
+Category.create(name: 'Category A', number: '1')
+Category.create(name: 'Category B', number: '2')
+Category.create(name: 'Category C', number: '3')
+Category.create(name: 'Category D', number: '4')
+Category.create(name: 'Category E', number: '5')
 
-Requirement.create(name: 'Service Hours', description: 'Do some service now, ya hear', amt_completed: 10.00, amt_goal: 20.00)
-Requirement.create(name: 'Leadership', description: 'Being leaders in the campus community', amt_completed: 3.00, amt_goal: 5.00)
-Requirement.create(name: 'Service Hours', description: 'Do some service now, ya hear', amt_completed: 1.00, amt_goal: 20.00)
-Requirement.create(name: 'Leadership', description: 'Being leaders in the campus community', amt_completed: 5.00, amt_goal: 5.00)
-
+Requirement.create(category_id: '1', name: 'Service Hours', description: 'Do some service now, ya hear', amt_complete: 10.00, amt_goal: 20.00)
+Requirement.create(category_id: '2', name: 'Leadership', description: 'Being leaders in the campus community', amt_complete: 3.00, amt_goal: 5.00)
+Requirement.create(category_id: '2', name: 'Service Hours', description: 'Do some service now, ya hear', amt_complete: 1.00, amt_goal: 20.00)
+Requirement.create(category_id: '3', name: 'Leadership', description: 'Being leaders in the campus community', amt_complete: 5.00, amt_goal: 5.00)
 
 d = DateTime.new(2017,11,19,8,37,48,"-06:00")
-Event.create(name: 'Trash pick up', date: d, total_hours: 10.0, id_req: 1)
-Participation.create(id_user: 1, id_event: 1, hours: 6.00)
-Participation.create(id_user: 2, id_event: 1, hours: 4.00)
+Event.create(name: 'Trash pick up', date: d, total_hours: 10.0)
+Participation.create(user_id: 1, event_id: 1, hours: 6.00)
+Participation.create(user_id: 2, event_id: 1, hours: 4.00)
 
 
 

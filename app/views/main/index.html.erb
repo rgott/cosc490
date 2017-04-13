@@ -1,13 +1,3 @@
-<div class="sidebar">
-  <img src="https://chiphi.dynamic.omegafi.com/wp-content/uploads/sites/2013/2016/10/chakett-logo-retina.png" alt="..." class="img-thumbnail img-circle">
-  <ul class="list-group">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Morbi leo risus</li>
-    <li class="list-group-item">Porta ac consectetur ac</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
-</div>
 <div class="content">
   <h1>Community Service</h1>
   <ul class="list-group">
@@ -18,13 +8,13 @@
       <div class="pull-right circularProgressBorder">
         <div class="pull-right">
           <%
-            percentComplete	= r.amt_completed.to_f/r.amt_goal
+            percentComplete	= r.amt_complete.to_f/r.amt_goal
           %>
           <div class="circularProgress --<%= (percentComplete * 100).to_i %> pull-right">
             <div class="circularProgress__overlay"></div>
           </div>
         </div>
-        <p class="pull-right"><%= r.amt_completed.truncate %>/<%= r.amt_goal.truncate %>&nbsp;</p>&nbsp;
+        <p class="pull-right"><%= r.amt_complete.truncate %>/<%= r.amt_goal.truncate %>&nbsp;</p>&nbsp;
       </div>
   <% end %>
   </ul>

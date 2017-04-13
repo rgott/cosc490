@@ -11,52 +11,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404010512) do
+ActiveRecord::Schema.define(version: 20170413172826) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.datetime "date"
-    t.decimal  "total_hours", precision: 6, scale: 2
-    t.integer  "id_req"
+    t.decimal  "total_hours",    precision: 10, scale: 2
+    t.integer  "requirement_id"
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+  end
+
+  add_index "events", ["requirement_id"], name: "index_events_on_requirement_id"
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "school_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "groups", ["school_id"], name: "index_groups_on_school_id"
+
+  create_table "participations", force: :cascade do |t|
+    t.decimal  "hours",      precision: 10, scale: 2
+    t.integer  "event_id"
+    t.integer  "user_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
 
-  create_table "groups", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "participations", force: :cascade do |t|
-    t.integer  "id_user"
-    t.integer  "id_event"
-    t.decimal  "hours",      precision: 6, scale: 2
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-  end
+  add_index "participations", ["event_id"], name: "index_participations_on_event_id"
+  add_index "participations", ["user_id"], name: "index_participations_on_user_id"
 
   create_table "requirements", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.decimal  "amt_completed", precision: 6, scale: 2
-    t.decimal  "amt_goal",      precision: 6, scale: 2
+    t.decimal  "amt_complete", precision: 10, scale: 2
+    t.decimal  "amt_goal",     precision: 10, scale: 2
+    t.integer  "category_id"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
   end
 
+  add_index "requirements", ["category_id"], name: "index_requirements_on_category_id"
+
   create_table "roles", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "school_and_groups", force: :cascade do |t|
-    t.integer  "id_school"
-    t.integer  "id_group"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -67,28 +75,19 @@ ActiveRecord::Schema.define(version: 20170404010512) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_and_groups", force: :cascade do |t|
-    t.integer  "id_group"
-    t.integer  "id_user"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_and_roles", force: :cascade do |t|
-    t.integer  "id_user"
-    t.integer  "id_role"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
-    t.string   "name_first"
-    t.string   "name_last"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "username"
     t.string   "password"
     t.string   "email"
+    t.integer  "group_id"
+    t.integer  "role_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "users", ["group_id"], name: "index_users_on_group_id"
+  add_index "users", ["role_id"], name: "index_users_on_role_id"
 
 end
