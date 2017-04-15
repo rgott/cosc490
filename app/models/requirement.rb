@@ -1,3 +1,3 @@
 class Requirement < ActiveRecord::Base
-  belongs_to :category
+  belongs_to :section
 end

@@ -5,11 +5,11 @@ one:
   description: MyText
   amt_complete: 9.99
   amt_goal: 9.99
-  category_id: 
+  section_id: 
 
 two:
   name: MyString
   description: MyText
   amt_complete: 9.99
   amt_goal: 9.99
-  category_id: 
+  section_id: 

@@ -5,7 +5,7 @@ class CreateRequirements < ActiveRecord::Migration
       t.text :description
       t.decimal :amt_complete, precision: 10, scale: 2
       t.decimal :amt_goal, precision: 10, scale: 2
-      t.references :category, index: true, foreign_key: true
+      t.references :section, index: true, foreign_key: true
 
       t.timestamps null: false
     end
