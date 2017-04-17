@@ -4,8 +4,9 @@ one:
   first_name: MyString
   last_name: MyString
   username: MyString
-  password: MyString
+  password_digest: <%= BCrypt::Password.create('secret') %>
   email: MyString
+  confirm_email: false
   group_id: 
   role_id: 
 
@@ -13,7 +14,8 @@ two:
   first_name: MyString
   last_name: MyString
   username: MyString
-  password: MyString
+  password_digest: <%= BCrypt::Password.create('secret') %>
   email: MyString
+  confirm_email: false
   group_id: 
   role_id: 
