@@ -300,7 +300,7 @@
       <Position>3</Position>
       <DataType>VARCHAR(0,-1)|12</DataType>
     </column>
-    <column id="81" parent="13" name="password">
+    <column id="81" parent="13" name="password_digest">
       <Position>4</Position>
       <DataType>VARCHAR(0,-1)|12</DataType>
     </column>
@@ -308,33 +308,38 @@
       <Position>5</Position>
       <DataType>VARCHAR(0,-1)|12</DataType>
     </column>
-    <column id="83" parent="13" name="group_id">
+    <column id="83" parent="13" name="confirm_email">
       <Position>6</Position>
-      <DataType>INTEGER(0,-1)|4</DataType>
+      <DataType>BOOLEAN(0,-1)|4</DataType>
+      <DefaultExpression>&apos;f&apos;</DefaultExpression>
     </column>
-    <column id="84" parent="13" name="role_id">
+    <column id="84" parent="13" name="group_id">
       <Position>7</Position>
       <DataType>INTEGER(0,-1)|4</DataType>
     </column>
-    <column id="85" parent="13" name="created_at">
+    <column id="85" parent="13" name="role_id">
       <Position>8</Position>
-      <DataType>DATETIME(0,-1)|12</DataType>
-      <NotNull>1</NotNull>
+      <DataType>INTEGER(0,-1)|4</DataType>
     </column>
-    <column id="86" parent="13" name="updated_at">
+    <column id="86" parent="13" name="created_at">
       <Position>9</Position>
       <DataType>DATETIME(0,-1)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="87" parent="13" name="index_users_on_group_id">
+    <column id="87" parent="13" name="updated_at">
+      <Position>10</Position>
+      <DataType>DATETIME(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="88" parent="13" name="index_users_on_group_id">
       <ColNames>group_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="88" parent="13" name="index_users_on_role_id">
+    <index id="89" parent="13" name="index_users_on_role_id">
       <ColNames>role_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="89" parent="13">
+    <key id="90" parent="13">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
