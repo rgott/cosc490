@@ -5,33 +5,38 @@ class MainController < ApplicationController
   end
 
   def academics
-    @cat_id = Category.where(:name => 'Academics')
-    @section = Section.where(:category =>  @cat_id)
-    @requirement = Requirement.where(:section => @section)
+    @cat_id = Category.find_by(name: 'Academics')
+    @sections = Section.where(category_id: @cat_id)
+    @section_ids = @sections.ids
+    @requirement = Requirement.where(section: [@section_ids])
   end
 
   def chapter_management
-    @cat_id = Category.where(:name => 'Chapter Management')
-    @section = Section.where(:category =>  @cat_id)
-    @requirement = Requirement.where(:section => @section)
+    @cat_id = Category.find_by(name: 'Chapter Management')
+    @sections = Section.where(category_id: @cat_id)
+    @section_ids = @sections.ids
+    @requirement = Requirement.where(section: [@section_ids])
   end
 
   def member_development
     @cat_id = Category.where(:name => 'Member Development')
-    @section = Section.where(:category =>  @cat_id)
-    @requirement = Requirement.where(:section => @section)
+    @sections = Section.where(category_id: @cat_id)
+    @section_ids = @sections.ids
+    @requirement = Requirement.where(section: [@section_ids])
   end
 
   def community_involvement
     @cat_id = Category.where(:name => 'Community Involvement')
-    @section = Section.where(:category =>  @cat_id)
-    @requirement = Requirement.where(:section => @section)
+    @sections = Section.where(category_id: @cat_id)
+    @section_ids = @sections.ids
+    @requirement = Requirement.where(section: [@section_ids])
   end
 
   def presentation
     @cat_id = Category.where(:name => 'Presentation')
-    @section = Section.where(:category =>  @cat_id)
-    @requirement = Requirement.where(:section => @section)
+    @sections = Section.where(category_id: @cat_id)
+    @section_ids = @sections.ids
+    @requirement = Requirement.where(section: [@section_ids])
   end
 
 end
