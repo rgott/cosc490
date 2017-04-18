@@ -89,13 +89,13 @@ ActiveRecord::Schema.define(version: 20170417174349) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "username"
-    t.string   "password"
+    t.string   "password_digest"
     t.string   "email"
-    t.boolean  "confirm_email", default: false
+    t.boolean  "confirm_email",   default: false
     t.integer  "group_id"
     t.integer  "role_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   add_index "users", ["group_id"], name: "index_users_on_group_id"
