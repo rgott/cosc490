@@ -2,6 +2,13 @@ Rails.application.routes.draw do
   get 'account/register'
 
   get 'main/index'
+  get 'main/academics'
+  get 'main/chapter_management'
+  get 'main/community_involvement'
+  get 'main/member_development'
+  get 'main/presentation'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
