@@ -24,8 +24,8 @@
         <td><%= user.username %></td>
         <td><%= user.email %></td>
         <td><%= user.confirm_email %></td>
-        <td><%= user.group %></td>
-        <td><%= user.role %></td>
+        <td><%= user.group.name %></td>
+        <td><%= user.role.name %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
