@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170417174349) do
+ActiveRecord::Schema.define(version: 20170424002054) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -23,10 +23,11 @@ ActiveRecord::Schema.define(version: 20170417174349) do
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.datetime "date"
-    t.decimal  "total_hours",    precision: 10, scale: 2
+    t.decimal  "total_hours",          precision: 10, scale: 2
     t.integer  "requirement_id"
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.decimal  "requirement_progress"
   end
 
   add_index "events", ["requirement_id"], name: "index_events_on_requirement_id"
@@ -54,11 +55,10 @@ ActiveRecord::Schema.define(version: 20170417174349) do
   create_table "requirements", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.decimal  "amt_complete", precision: 10, scale: 2
-    t.decimal  "amt_goal",     precision: 10, scale: 2
+    t.decimal  "amt_goal",    precision: 10, scale: 2
     t.integer  "section_id"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   add_index "requirements", ["section_id"], name: "index_requirements_on_section_id"

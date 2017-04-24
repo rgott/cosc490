@@ -32,37 +32,37 @@ User.create(role_id: '2', group_id: '1', first_name: 'Charlie', last_name: 'Deck
 Category.create(name: 'Academics', number: '1')
 
 Section.create(category_id: '1', name: 'GPA', number: '1')
-Requirement.create(section_id: '1', name: 'Chapter GPA', description: 'None', amt_complete: 3.24, amt_goal: 4.00)
-Requirement.create(section_id: '1', name: 'Newest Member GPA', description: 'None', amt_complete: 3.53, amt_goal: 4.00)
-Requirement.create(section_id: '1', name: 'Academic or Scholarship Development', description: 'None', amt_complete: 53.00, amt_goal: 100.00)
+Requirement.create(section_id: '1', name: 'Chapter GPA', description: 'None', amt_goal: 4.00)
+Requirement.create(section_id: '1', name: 'Newest Member GPA', description: 'None', amt_goal: 4.00)
+Requirement.create(section_id: '1', name: 'Academic or Scholarship Development', description: 'None', amt_goal: 100.00)
 
 # Category 2
 
 Category.create(name: 'Chapter Management', number: '2')
 
 Section.create(category_id: '2', name: 'Financial Management', number: '1')
-Requirement.create(section_id: '2', name: 'Chapter has a Budget Signed by Advisor', description: 'None', amt_complete: 2.00, amt_goal: 2.00)
-Requirement.create(section_id: '2', name: 'Current with chapter council\'s account', description: 'None', amt_complete: 2.00, amt_goal: 2.00)
-Requirement.create(section_id: '2', name: 'Current with SGA account', description: 'None', amt_complete: 2.00, amt_goal: 2.00)
+Requirement.create(section_id: '2', name: 'Chapter has a Budget Signed by Advisor', description: 'None', amt_goal: 2.00)
+Requirement.create(section_id: '2', name: 'Current with chapter council\'s account', description: 'None', amt_goal: 2.00)
+Requirement.create(section_id: '2', name: 'Current with SGA account', description: 'None', amt_goal: 2.00)
 
 Section.create(category_id: '2', name: 'Organizational Deadlines', number: '2')
-Requirement.create(section_id: '3', name: 'Presidential Deadlines ', description: 'None', amt_complete: 0.00, amt_goal: 5.00)
-Requirement.create(section_id: '3', name: 'Rosters handed in on time', description: 'None', amt_complete: 1.00, amt_goal: 1.00)
-Requirement.create(section_id: '3', name: 'Submits Relationship Statement', description: 'None', amt_complete: 1.00, amt_goal: 1.00)
+Requirement.create(section_id: '3', name: 'Presidential Deadlines ', description: 'None', amt_goal: 5.00)
+Requirement.create(section_id: '3', name: 'Rosters handed in on time', description: 'None', amt_goal: 1.00)
+Requirement.create(section_id: '3', name: 'Submits Relationship Statement', description: 'None', amt_goal: 1.00)
 
 # Category 3
 
 Category.create(name: 'Member Development', number: '3')
 
 Section.create(category_id: '3', name: 'Health and Wellness Programming', number: '1')
-Requirement.create(section_id: '4', name: 'Attendance', description: 'None', amt_complete: 0.00, amt_goal: 5.00)
-Requirement.create(section_id: '4', name: 'Chapter is a co-Sponsor of a Program with any Towson University organization', description: 'None', amt_complete: 0.00, amt_goal: 3.00)
-Requirement.create(section_id: '4', name: 'Chapter is a sponsor of a program with chapter from the same council', description: 'None', amt_complete: 3.00, amt_goal: 3.00)
-Requirement.create(section_id: '4', name: 'Chapter is a sponsor of a program with chapter from a culturally different council ', description: 'None', amt_complete: 0.00, amt_goal: 3.00)
+Requirement.create(section_id: '4', name: 'Attendance', description: 'None', amt_goal: 5.00)
+Requirement.create(section_id: '4', name: 'Chapter is a co-Sponsor of a Program with any Towson University organization', description: 'None', amt_goal: 3.00)
+Requirement.create(section_id: '4', name: 'Chapter is a sponsor of a program with chapter from the same council', description: 'None', amt_goal: 3.00)
+Requirement.create(section_id: '4', name: 'Chapter is a sponsor of a program with chapter from a culturally different council ', description: 'None', amt_goal: 3.00)
 
 Section.create(category_id: '3', name: 'Alumni Relations', number: '2')
-Requirement.create(section_id: '5', name: 'Chapter plans an event for alumni', description: '(multiple people)(2 points for each up to 6 points)', amt_complete: 2.00, amt_goal: 6.00)
-Requirement.create(section_id: '5', name: 'Chapter sends out an alumni newsletter/Has a Yahoo, Hotmail Group, etc./alumni list serve', description: '(multiple people)(2 points for each up to 6 points)', amt_complete: 0.00, amt_goal: 6.00)
+Requirement.create(section_id: '5', name: 'Chapter plans an event for alumni', description: '(multiple people)(2 points for each up to 6 points)', amt_goal: 6.00)
+Requirement.create(section_id: '5', name: 'Chapter sends out an alumni newsletter/Has a Yahoo, Hotmail Group, etc./alumni list serve', description: '(multiple people)(2 points for each up to 6 points)', amt_goal: 6.00)
 
 # Category 4
 
@@ -71,7 +71,7 @@ Category.create(name: 'Community Involvement', number: '4')
 Section.create(category_id: '4', name: 'Governing Councils', number: '1')
 
 Section.create(category_id: '4', name: 'Community Service', number: '2')
-Requirement.create(section_id: '7', name: 'Service Hours', description: 'None', amt_complete: 10.00, amt_goal: 100.00)
+Requirement.create(section_id: '7', name: 'Service Hours', description: 'None', amt_goal: 100.00)
 
 
 # Category 5
@@ -85,7 +85,7 @@ Section.create(category_id: '5', name: 'Delivery', number: '2')
 ######
 
 d = DateTime.new(2017,11,19,8,37,48,"-06:00")
-Event.create(requirement_id: '16', name: 'Trash pick up', date: d, total_hours: 10.0)
+Event.create(requirement_id: '16', name: 'Trash pick up', date: d, total_hours: 10.0, requirement_progress: 0.5)
 Participation.create(user_id: 1, event_id: 1, hours: 6.00)
 Participation.create(user_id: 2, event_id: 1, hours: 4.00)
 

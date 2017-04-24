@@ -3,17 +3,17 @@
   <ul class="list-group">
     <% @requirement.each do |r| %>
     <li class="list-group-item">
-      <span class="description"><%= r.name %></span>
+      <span class="description truncate"><%= r.name %></span>
       <div class="pull-right circularProgressBorder">
         <div class="pull-right">
           <%
-            percentComplete	= r.amt_complete.to_f/r.amt_goal
+            percentComplete	= r.amt_goal.to_f/r.amt_goal
           %>
           <div class="circularProgress --<%= (percentComplete * 100).to_i %> pull-right">
             <div class="circularProgress__overlay"></div>
           </div>
         </div>
-        <p class="pull-right"><%= r.amt_complete.truncate %>/<%= r.amt_goal.truncate %>&nbsp;</p>&nbsp;
+        <p class="pull-right"><%= r.amt_goal.truncate %>/<%= r.amt_goal.truncate %>&nbsp;</p>&nbsp;
       </div>
   <% end %>
   </ul>
