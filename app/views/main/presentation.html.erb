@@ -2,9 +2,9 @@
 
   <h1>Presentation</h1>
   <ul class="list-group">
-    <% @requirement.each do |r| %>
+    <% @requirement.each_with_index do |r, index| %>
         <li class="list-group-item">
-          <span class="label label-default">1.1</span>
+          <span class="label label-default"><%= r.section_id %>.<%= index %></span>
           <span class="description"><%= r.name %></span>
           <div class="pull-right circularProgressBorder">
             <div class="pull-right">

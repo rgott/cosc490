@@ -1,6 +1,20 @@
 class MainController < ApplicationController
   def index
     @requirement = Requirement.all
+    @progress = Event.all.sum("requirement_progress").to_f
+    if @progress < 210
+      @tier = 'Needs Improvement'
+      @pointsToNext = 210 - @progress
+    elsif @progress < 238
+      @tier = 'Bronze'
+      @pointsToNext = 238 - @progress
+    elsif @progress < 260
+      @tier = 'Silver'
+      @pointsToNext = 260 - @progress
+    else
+      @tier = 'Gold'
+    end
+
   end
 
   def academics

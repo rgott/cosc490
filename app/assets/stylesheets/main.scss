@@ -11,17 +11,10 @@ $backgroundColor: #2A3F54;
     border-radius: 0;
     margin: 0;
     background-color: $backgroundColor;
-    a {
-      color: white;
-      white-space: normal;
-    }
-    a:hover {
-      background: transparent;
-      text-decoration: none !important;
-    }
   }
   .btn:hover {
     background-color: #223344;
+    color: white;
   }
   img {
     padding: 15px;
@@ -40,6 +33,12 @@ $backgroundColor: #2A3F54;
   height: 100vh;
   padding: 25px;
   float: left;
+}
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .completionElement
 {
