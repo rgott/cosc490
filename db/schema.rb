@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425032502) do
+ActiveRecord::Schema.define(version: 20170426023702) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -55,11 +55,11 @@ ActiveRecord::Schema.define(version: 20170425032502) do
   create_table "requirements", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.decimal  "amt_goal",    precision: 10, scale: 2
+    t.decimal  "amt_goal",     precision: 10, scale: 2
     t.integer  "section_id"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-    t.integer  "index"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "order_number"
   end
 
   add_index "requirements", ["section_id"], name: "index_requirements_on_section_id"
