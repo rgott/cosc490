@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get 'main/member_development'
   get 'main/presentation'
 
+  resources :events
 
 
   root 'main#index'
