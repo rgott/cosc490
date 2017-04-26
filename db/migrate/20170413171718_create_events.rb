@@ -3,7 +3,7 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.string :name
       t.datetime :date
-      t.decimal :total_hours, precision: 10, scale: 2
+      t.decimal :requirement_progress, precision: 10, scale: 2
       t.references :requirement, index: true, foreign_key: true
 
       t.timestamps null: false

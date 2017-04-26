@@ -8,7 +8,7 @@
           <div class="pull-right circularProgressBorder">
             <div class="pull-right">
               <%
-                progress = Event.where(:requirement_id => r.id).sum(:total_hours).to_f
+                progress = Event.where(:requirement_id => r.id).sum(:requirement_progress).to_f
                 percentComplete	= progress/r.amt_goal
                 if percentComplete > 1 then
                   percentComplete = 1

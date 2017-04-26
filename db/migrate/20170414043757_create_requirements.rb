@@ -6,6 +6,7 @@ class CreateRequirements < ActiveRecord::Migration
       t.decimal :amt_complete, precision: 10, scale: 2
       t.decimal :amt_goal, precision: 10, scale: 2
       t.references :section, index: true, foreign_key: true
+      t.integer :order_number
 
       t.timestamps null: false
     end

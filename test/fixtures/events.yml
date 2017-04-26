@@ -3,11 +3,11 @@
 one:
   name: MyString
   date: 2017-04-13 13:17:18
-  total_hours: 9.99
-  requirement_id: 
+  requirement_progress: 9.99
+  requirement_id:
 
 two:
   name: MyString
   date: 2017-04-13 13:17:18
-  total_hours: 9.99
-  requirement_id: 
+  requirement_progress: 9.99
+  requirement_id:
