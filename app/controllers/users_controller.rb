@@ -26,6 +26,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+    @user.group = Group.find(1)
+    @user.role = Role.find(1)
+
     respond_to do |format|
       if @user.save
         format.html { redirect_to users_url, notice: 'User was successfully created.' }
@@ -64,7 +67,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.joins(:group).joins(:role).where("user.id = #{params[:id]}")
+      @user = User.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
