@@ -85,7 +85,10 @@ Section.create(category_id: '5', name: 'Delivery', number: '2')
 ######
 
 d = DateTime.new(2017,11,19,8,37,48,"-06:00")
-Event.create(requirement_id: '16', name: 'Trash pick up', date: d, total_hours: 10.0, requirement_progress: 40)
+Event.create(requirement_id: '1', name: 'Trash pick up', date: d, total_hours: 10.0)
+Event.create(requirement_id: '2', name: 'Trash pick up2', date: d, total_hours: 4.0)
+Event.create(requirement_id: '3', name: 'Trash pick up3', date: d, total_hours: 6.0)
+
 Participation.create(user_id: 1, event_id: 1, hours: 6.00)
 Participation.create(user_id: 2, event_id: 1, hours: 4.00)
 
