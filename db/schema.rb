@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170426023702) do
+ActiveRecord::Schema.define(version: 20170417174349) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -23,11 +23,10 @@ ActiveRecord::Schema.define(version: 20170426023702) do
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.datetime "date"
-    t.decimal  "total_hours",          precision: 10, scale: 2
+    t.decimal  "requirement_progress", precision: 10, scale: 2
     t.integer  "requirement_id"
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
-    t.decimal  "requirement_progress"
   end
 
   add_index "events", ["requirement_id"], name: "index_events_on_requirement_id"
@@ -55,11 +54,12 @@ ActiveRecord::Schema.define(version: 20170426023702) do
   create_table "requirements", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
+    t.decimal  "amt_complete", precision: 10, scale: 2
     t.decimal  "amt_goal",     precision: 10, scale: 2
     t.integer  "section_id"
+    t.integer  "order_number"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
-    t.integer  "order_number"
   end
 
   add_index "requirements", ["section_id"], name: "index_requirements_on_section_id"
@@ -89,7 +89,6 @@ ActiveRecord::Schema.define(version: 20170426023702) do
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "username"
     t.string   "password"
     t.string   "email"
     t.boolean  "confirm_email", default: false
