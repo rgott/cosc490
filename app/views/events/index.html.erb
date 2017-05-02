@@ -18,7 +18,7 @@
       <tr>
         <td><%= event.name %></td>
         <td><%= event.date %></td>
-        <td><%= event.requirement_id %></td>
+        <td><%= Requirement.find_by_id(event.requirement_id).name %></td>
         <td><%= event.requirement_progress %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
