@@ -11,6 +11,11 @@
 
 <div class="sidebar">
   <img src="https://chiphi.dynamic.omegafi.com/wp-content/uploads/sites/2013/2016/10/chakett-logo-retina.png" alt="..." class="img-thumbnail img-circle">
+  <h4 class='page-header' style='color:white'>Events</h4>
+  <ul class="list-group">
+    <%= button_to 'Event', events_path, :method => 'get', :class => 'btn btn-block' %>
+  </ul>
+  <h4 class='page-header' style='color:white'>Requirements</h4>
   <ul class="list-group">
     <%= button_to 'Overview', main_index_path, :method => 'get', :class => 'btn btn-block' %>
     <%= button_to 'Academics', main_academics_path, :method => 'get', :class => 'btn btn-block' %>
