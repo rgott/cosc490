@@ -8,8 +8,9 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:date) %></th>
-      <th><%= model_class.human_attribute_name(:requirement_progress) %></th>
+      <th>Req #</th>
       <th><%= model_class.human_attribute_name(:requirement_id) %></th>
+      <th><%= model_class.human_attribute_name(:requirement_progress) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -20,9 +21,9 @@
         <td><%= link_to event.id, event_path(event) %></td>
         <td><%= event.name %></td>
         <td><%= event.date %></td>
+        <td><%= event.requirement_id %></td>
         <td><%= Requirement.find_by_id(event.requirement_id).name %></td>
         <td><%= event.requirement_progress %></td>
-        <td><%= event.requirement_id %></td>
         <td><%=l event.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
