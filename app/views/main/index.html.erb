@@ -1,6 +1,29 @@
 <div class="content">
-  <h1>Chapter Assessment Program</h1>
-  <h3>Expected Tier: <%= @tier %></h3>
-  <h3>Total Points: <%= @progress %></h3>
-  <h3>Points Until Next Tier: <%= @pointsToNext %></h3>
+  <div class="status">
+    <h1>Chapter Assessment Program</h1>
+    <h3>Expected Tier: <%= @tier %></h3>
+    <h3>Total Points: <%= @progress %></h3>
+    <h3>Points Until Next Tier: <%= @pointsToNext %></h3>
+  </div>
+  <ul class="list-group">
+    <% @requirement.each_with_index do |r, index| %>
+        <li class="list-group-item">
+          <span class="label label-default"><%= r.section_id %>.<%= index %></span>
+          <span class="description"><%= r.name %></span>
+          <div class="pull-right circularProgressBorder">
+            <div class="pull-right">
+              <%
+  progress = Event.where(:requirement_id => r.id).sum("requirement_progress").to_f
+  percentComplete	= progress/r.amt_goal
+%>
+              <div class="circularProgress --<%= (percentComplete * 100).to_i %> pull-right">
+                <div class="circularProgress__overlay"></div>
+              </div>
+            </div>
+            <p class="pull-right"><%= progress.truncate %>/<%= r.amt_goal.truncate %>&nbsp;</p>&nbsp;
+          </div>
+    <% end %>
+  </ul>
 </div>
+
+

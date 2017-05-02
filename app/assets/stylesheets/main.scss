@@ -2,11 +2,46 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $backgroundColor: #2A3F54;
+html, body {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+}
+.content {
+  .status {
+    padding: 20px;
+    h1 {
+      margin: 0;
+    }
+  }
+
+
+}
 .sidebar {
-  width: 15%;
-  height: 100vh;
-  float: left;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background-color: $backgroundColor;
+  height:100%;
+  width:15vw;
+  float: left;/*
+  position:fixed!important;
+  z-index:1;
+  overflow:auto;*/
+  .close-btn {
+    background-color: transparent;
+    font-size: 60px;
+    float: right;
+    color: white;
+    border: none;
+    line-height: 0;
+    height: 50px;
+  }
+  .close-btn:active {
+    border: none;
+  }
   .btn {
     border-radius: 0;
     margin: 0;
@@ -27,12 +62,6 @@ $backgroundColor: #2A3F54;
       background: transparent;
     }
   }
-}
-.content {
-  width: 85%;
-  height: 100vh;
-  padding: 25px;
-  float: left;
 }
 .truncate {
   width: 250px;

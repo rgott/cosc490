@@ -1,33 +1,55 @@
-<%= form_for(@event) do |f| %>
-    <% if @event.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<%= form_for @event, :html => { :class => "form-horizontal event" } do |f| %>
 
-          <ul>
-            <% @event.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
+  <% if @event.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
 
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :name, :class => 'form-control' %>
     </div>
-    <div class="field">
-      <%= f.label :date %><br>
-      <%= f.datetime_select :date %>
+    <%=f.error_span(:name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :date, :class => 'form-control' %>
     </div>
-    <div class="field">
-      <%= f.label :requirement_id %><br>
-      <%= f.collection_select :requirement_id, Requirement.order(:id), :id, :name %>
+    <%=f.error_span(:date) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :requirement_progress, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :requirement_progress, :class => 'form-control' %>
     </div>
-    <div class="field">
-      <%= f.label :requirement_progress %><br>
-      <%= f.number_field :requirement_progress, min: 0 %>
+    <%=f.error_span(:requirement_progress) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :requirement_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :requirement_id, :class => 'form-control' %>
     </div>
-    <div class="actions">
-      <%= f.submit %>
+    <%=f.error_span(:requirement_id) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                events_path, :class => 'btn btn-default' %>
     </div>
+  </div>
+
 <% end %>
