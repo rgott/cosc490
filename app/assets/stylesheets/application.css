@@ -13,8 +13,3 @@
  *= require_tree .
  *= require_self
  */
-.viewport {
-    width: 85%;
-    height: 100%;
-    margin-left: 15vw;
-}
