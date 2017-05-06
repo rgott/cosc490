@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @checkpoint.comment %>
+</p>
+
+<p>
+  <strong>Completion date:</strong>
+  <%= @checkpoint.completion_date %>
+</p>
+
+<p>
+  <strong>Requirement:</strong>
+  <%= @checkpoint.requirement %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @checkpoint.user %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @checkpoint.group %>
+</p>
+
+<%= link_to 'Edit', edit_checkpoint_path(@checkpoint) %> |
+<%= link_to 'Back', checkpoints_path %>

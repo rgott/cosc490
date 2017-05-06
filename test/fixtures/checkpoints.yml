@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comment: MyText
+  completion_date: 2017-05-05 20:33:14
+  requirement_id: 
+  user_id: 
+  group_id: 
+
+two:
+  comment: MyText
+  completion_date: 2017-05-05 20:33:14
+  requirement_id: 
+  user_id: 
+  group_id: 
