@@ -22,8 +22,11 @@
         <td><%= Requirement.find_by_id(checkpoint.requirement_id).name %></td>
         <td><%= checkpoint.comment %></td>
         <td><%= checkpoint.completion_date %></td>
-        <td><%= checkpoint.user_id %></td>
-        <td><%= checkpoint.group_id %></td>
+        <td>
+            <%= User.find_by_id(checkpoint.user_id).first_name %>
+            <%= User.find_by_id(checkpoint.user_id).last_name %>
+        </td>
+        <td><%= Group.find_by_id(checkpoint.group_id).name %></td>
         <td><%= link_to 'Show', checkpoint %></td>
         <td><%= link_to 'Edit', edit_checkpoint_path(checkpoint) %></td>
         <td><%= link_to 'Destroy', checkpoint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
