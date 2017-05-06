@@ -93,7 +93,7 @@ Participation.create(user_id: 2, event_id: 1, hours: 4.00)
 Participation.create(user_id: 1, event_id: 2, hours: 8.00)
 Participation.create(user_id: 2, event_id: 2, hours: 2.00)
 
-Checkpoint.create(comment: 'done', completion_date: d, requirement_id: 1, user_id: 1, group_id: 1)
-Checkpoint.create(comment: 'done', completion_date: d, requirement_id: 4, user_id: 1, group_id: 1)
-Checkpoint.create(comment: 'done', completion_date: d, requirement_id: 7, user_id: 1, group_id: 1)
+Checkpoint.create(comment: 'Our chapter gpa is super', completion_date: d, requirement_id: 1, user_id: 1, group_id: 1)
+Checkpoint.create(comment: 'The advisor loved signing our budget', completion_date: d, requirement_id: 4, user_id: 1, group_id: 1)
+Checkpoint.create(comment: 'President deadlines are dead', completion_date: d, requirement_id: 7, user_id: 1, group_id: 1)
 

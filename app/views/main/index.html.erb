@@ -13,7 +13,13 @@
           <div class="pull-right circularProgressBorder">
             <div class="pull-right">
               <%
-                progress = Event.where(:requirement_id => r.id).sum("requirement_progress").to_f
+                if(r.is_event_oriented == 1)
+                  progress = Event.where(:requirement_id => r.id).sum("requirement_progress").to_f
+                else
+                  progress = Requirement.where(id: [r.id]).pluck(:amt_goal).sum.to_f
+                  puts progress
+                end
+
                 percentComplete	= progress/r.amt_goal
 
                 if percentComplete > 1 then

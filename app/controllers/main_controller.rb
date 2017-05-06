@@ -4,7 +4,7 @@ class MainController < ApplicationController
     @eventProgress = Event.all.sum("requirement_progress").to_f
 
     @checkPointReqIDs = Checkpoint.all.pluck(:requirement_id)
-    @checkpointProgress = Requirement.where(id: [@checkPointReqIDs]).pluck(:amt_goal).sum
+    @checkpointProgress = Requirement.where(id: [@checkPointReqIDs]).pluck(:amt_goal).sum.to_f
 
     @progress = @eventProgress + @checkpointProgress
     if @progress < 210
