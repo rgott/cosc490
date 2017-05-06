@@ -92,6 +92,7 @@ Event.create(requirement_id: '16', name: 'Trash pick up', date: d, requirement_p
 Participation.create(user_id: 1, event_id: 3, hours: 6.00)
 Participation.create(user_id: 2, event_id: 3, hours: 4.00)
 
+Checkpoint.create(comment: 'done', completion_date: d, requirement_id: 4, user_id: 1, group_id: 1)
 
 
 
