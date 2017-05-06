@@ -1,7 +1,12 @@
 class MainController < ApplicationController
   def index
     @requirement = Requirement.all
-    @progress = Event.all.sum("requirement_progress").to_f
+    @eventProgress = Event.all.sum("requirement_progress").to_f
+
+    @checkPointReqIDs = Checkpoint.all.pluck(:requirement_id)
+    @checkpointProgress = Requirement.where(id: [@checkPointReqIDs]).pluck(:amt_goal).sum
+
+    @progress = @eventProgress + @checkpointProgress
     if @progress < 210
       @tier = 'Needs Improvement'
       @pointsToNext = 210 - @progress
