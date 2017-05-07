@@ -27,9 +27,15 @@
             <%= User.find_by_id(checkpoint.user_id).last_name %>
         </td>
         <td><%= Group.find_by_id(checkpoint.group_id).name %></td>
-        <td><%= link_to 'Show', checkpoint %></td>
-        <td><%= link_to 'Edit', edit_checkpoint_path(checkpoint) %></td>
-        <td><%= link_to 'Destroy', checkpoint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_checkpoint_path(checkpoint), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      checkpoint_path(checkpoint),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -37,6 +43,8 @@
 
 <br>
 
-<%= link_to 'New Checkpoint', new_checkpoint_path %>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_checkpoint_path,
+              :class => 'btn btn-success' %>
 
 </div>
