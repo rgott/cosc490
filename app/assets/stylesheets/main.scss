@@ -4,6 +4,14 @@
 
 $backgroundColor: #2A3F54;
 
+.navbar-svg
+{
+  margin:-15px;
+  margin-top: -35px;
+  z-index: 700;
+  float:left;
+}
+
 .close-btn {
   background-color: transparent;
   font-size: 60px;
@@ -138,13 +146,19 @@ img {
   color: #fff;
   background: none;
 }
-
+.menu-bars
+{
+  margin-left:-1px;
+}
 #menu-toggle {
+  z-index: 800;
+  position:fixed;
+
   text-decoration: none;
   float: left;
   width: 43px;
   height: 43px;
-  background-color:#2A3F54;
+  background-color:transparent;
   color: #fff;
   padding-right: 15px;
 }
