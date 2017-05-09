@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   resources :checkpoints
   #get 'admin/index'
 
-  #get 'sessions/new'
-
+  get 'sessions/new'
+  post 'sessions/new'
   get 'sessions/create'
 
   get 'sessions/destroy'

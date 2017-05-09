@@ -10,8 +10,9 @@ $backgroundColor: #2A3F54;
   margin-top: -35px;
   z-index: 700;
   float:left;
+  pointer-events: none;
+  background-color:transparent;
 }
-
 .close-btn {
   background-color: transparent;
   font-size: 60px;
@@ -33,6 +34,24 @@ $backgroundColor: #2A3F54;
 .btn:hover {
   background-color: #223344;
   color: whitesmoke !important;
+}
+
+.sidebar-login
+{
+  height:35px;
+  vertical-align: middle;
+  font-size:20px;
+  margin-right:0px !important;
+  border-bottom: 2px solid #556677;
+}
+.sidebar-login-link
+{
+  color:whitesmoke !important;
+
+  height: 100%;
+  display: inline-block;
+  text-align: center;
+  border-right:1px solid #556677;
 }
 
 .list-group {

@@ -14,7 +14,7 @@
   <a id="menu-toggle" href="#" class="navbar-brand btn-menu toggle">
     <i class="fa fa-bars menu-bars" style="z-index: 750;"></i>
 
-    <svg height="100" width="100" class="navbar-svg">
+    <svg height="100" width="100" class="navbar-svg" >
       <path d="M0 0 L75 0 L0 75 Z" fill="#2A3F54" />
     </svg>
 
@@ -23,7 +23,17 @@
   <div id="sidebar-wrapper">
     <nav id="spy">
       <div class="sidebar-nav nav">
-
+        <div class="row sidebar-login">
+          <% if @user = nil %>
+            <div>
+              Welcome!
+            </div>
+            <a class="col-md-1" href="/"><% @user.email %></a>
+          <% else %>
+            <a href="/sessions/new" class="col-md-6 sidebar-login-link">Login</a>
+            <a href="/users/new" class="col-md-6 sidebar-login-link">Signup</a>
+          <% end %>
+        </div>
         <img src="https://chiphi.dynamic.omegafi.com/wp-content/uploads/sites/2013/2016/10/chakett-logo-retina.png" alt="..." class="img-thumbnail img-circle">
         <h4 class='page-header nav-title'>Events</h4>
         <ul class="nav">
