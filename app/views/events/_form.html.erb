@@ -39,7 +39,7 @@
   <div class="form-group">
     <%= f.label :requirement_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.collection_select :requirement_id, Requirement.where(:is_event_oriented => 1).order(:id) , :id, :name, :class => 'form-control' %>
+      <%= f.collection_select :requirement_id, Requirement.where(:is_event_oriented => 1).order(:id) , :id, :name, {prompt: 'Select a Requirement'}, {class: 'form-control'} %>
     </div>
     <%=f.error_span(:requirement_id) %>
   </div>
