@@ -30,7 +30,7 @@
                   <%= User.find_by_id(session[:user_id]).email %>
                   <span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu" style="margin-top:30px;">
+                <ul class="dropdown-menu">
                   <li><a href="<%= logout_path %>">Logout</a></li>
                 </ul>
               </div>

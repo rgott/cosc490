@@ -82,6 +82,25 @@ $backgroundColor: #2A3F54;
 
 $sidebar-width: 220px;
 
+.dropdown-menu
+{
+  width: $sidebar-width + 15;
+  margin:0px;
+  margin-top:33px !important;
+  background-color: darken($backgroundColor,10%) !important;
+  li > a
+  {
+    color:white !important;
+
+  }
+  li > a:hover
+  {
+    background-color: lighten($backgroundColor,10%) !important;
+  }
+
+}
+
+
 img {
   width:85%;
   margin-left:15px;
