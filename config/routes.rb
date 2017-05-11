@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   post 'sessions/new'
   get 'sessions/create'
-
+  post 'sessions/create'
   get 'sessions/destroy'
 
   resources :users
@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     delete 'logout' => :destroy
   end
 
+  match '/signup',   to: 'users#new', via: [:get, :post]
+  match '/signin',   to: 'sessions#new', via: [:get, :post]
+  match '/logout',  to: 'sessions#destroy', via: [:get, :post, :delete]
 
   get 'account/register'
 

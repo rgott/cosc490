@@ -24,13 +24,19 @@
     <nav id="spy">
       <div class="sidebar-nav nav">
         <div class="row sidebar-login">
-          <% if @user = nil %>
-            <div>
-              Welcome!
-            </div>
-            <a class="col-md-1" href="/"><% @user.email %></a>
+          <% if session[:user_id] != nil %>
+              <div class="dropdown">
+                <button class="btn dropdown-toggle col-md-1 sidebar-login-link" style="width:100%;" type="button" data-toggle="dropdown">
+                  <%= User.find_by_id(session[:user_id]).email %>
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" style="margin-top:30px;">
+                  <li><a href="<%= logout_path %>">Logout</a></li>
+                </ul>
+              </div>
           <% else %>
-            <a href="/sessions/new" class="col-md-6 sidebar-login-link">Login</a>
+            <a href="/sessions/new" class="col-md-6 sidebar-login-link">Login
+            </a>
             <a href="/users/new" class="col-md-6 sidebar-login-link">Signup</a>
           <% end %>
         </div>

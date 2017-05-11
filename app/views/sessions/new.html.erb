@@ -1,18 +1,24 @@
-<div>
+<div class="container">
+
   <% if flash[:alert] %>
   <p id="notice"><%= flash[:alert] %></p>
   <% end %>
 
-  <%= form_tag do %>
+  <%= form_tag :action => 'create' do %>
   <fieldset>
-    <legend>Please Login</legend>
+    <legend>Login</legend>
     <div>
-        <%=	label_tag :name, 'Name' %>
-        <%=	text_field_tag :name, params[:name] %>
+        <%=	label_tag :email, 'Email' %>
+        <br/>
+        <%=	email_field_tag :email, params[:email] %>
+        <br/>
+        <br/>
         <%=	label_tag :password, 'Password' %>
+        <br/>
         <%=	password_field_tag :password, params[:password] %>
       </div>
     <div>
+      <br/>
       <%= submit_tag 'Login' %>
     </div>
   </fieldset>
