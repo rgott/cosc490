@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   match '/signup',   to: 'users#new', via: [:get, :post]
   match '/signin',   to: 'sessions#new', via: [:get]
   post 'sessions/create'
-  match '/logout',  to: 'sessions#destroy', via: [:post]
+  match '/logout',  to: 'sessions#destroy', via: [:post, :get]
 
   get 'account/register'
 
