@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="status">
-    <h1>Chapter Assessment Program</h1>
-    <h3>Expected Tier: <%= @tier %></h3>
-    <h3>Total Points: <%= @progress %></h3>
-    <h3>Points Until Next Tier: <%= @pointsToNext %></h3>
-  </div>
+  <table class="table table-bordered">
+    <tr><th colspan="2">Chapter Assessment Program</th></tr>
+    <tr><td>Expected Tier</td> <td><%= @tier %></td></tr>
+    <tr><td>Total Points</td> <td><%= @progress %></td></tr>
+    <tr><td>Points Until Next Tier</td> <td><%= @pointsToNext %></td></tr>
+  </table>
   <ul class="list-group">
     <% @requirement.each_with_index do |r| %>
         <li class="list-group-item">

@@ -53,10 +53,12 @@ $backgroundColor: #2A3F54;
   text-align: center;
   border-right:1px solid #556677;
 }
-
+.table {
+  margin-bottom: 0 !important;
+}
 .list-group {
   color: black;
-  width:90%;
+  width:100%;
   .list-group-item {
     background: transparent;
   }
