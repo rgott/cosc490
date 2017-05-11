@@ -1,14 +1,5 @@
 Rails.application.routes.draw do
-
   resources :checkpoints
-  #get 'admin/index'
-
-  get 'sessions/new'
-  post 'sessions/new'
-  get 'sessions/create'
-  post 'sessions/create'
-  get 'sessions/destroy'
-
   resources :users
   get 'admin' => 'admin#index'
   controller :sessions do
@@ -18,8 +9,9 @@ Rails.application.routes.draw do
   end
 
   match '/signup',   to: 'users#new', via: [:get, :post]
-  match '/signin',   to: 'sessions#new', via: [:get, :post]
-  match '/logout',  to: 'sessions#destroy', via: [:get, :post, :delete]
+  match '/signin',   to: 'sessions#new', via: [:get]
+  post 'sessions/create'
+  match '/logout',  to: 'sessions#destroy', via: [:post]
 
   get 'account/register'
 
