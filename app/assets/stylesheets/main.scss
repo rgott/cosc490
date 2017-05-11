@@ -31,14 +31,14 @@ $backgroundColor: #2A3F54;
   margin: 0;
   background-color: $backgroundColor;
 }
-.btn:hover {
+.btn:hover, .btn:focus {
   background-color: #223344;
   color: whitesmoke !important;
 }
 
 .sidebar-login
 {
-  height:35px;
+  height: 35px;
   vertical-align: middle;
   font-size:20px;
   margin-right:0px !important;
@@ -149,6 +149,7 @@ img {
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {
   text-decoration: none;
+
 }
 
 .sidebar-nav > .sidebar-brand {
