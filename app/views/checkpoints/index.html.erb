@@ -22,7 +22,7 @@
         <td><%= link_to checkpoint.id, checkpoint_path(checkpoint) %></td>
         <td><%= checkpoint.comment %></td>
         <td><%= checkpoint.completion_date %></td>
-        <td><%= checkpoint.requirement_id %></td>
+        <td><%= get_requirement_name(checkpoint) %></td>
         <td><%= checkpoint.user_id %></td>
         <td><%= checkpoint.group_id %></td>
         <td><%=l checkpoint.created_at %></td>

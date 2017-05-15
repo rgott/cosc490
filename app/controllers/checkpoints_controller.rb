@@ -6,7 +6,7 @@ class CheckpointsController < ApplicationController
   def index
     @checkpoints = Checkpoint.all
   end
-
+  helper_method :get_requirement_name
   # GET /checkpoints/1
   # GET /checkpoints/1.json
   def show
@@ -70,5 +70,9 @@ class CheckpointsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def checkpoint_params
       params.require(:checkpoint).permit(:comment, :completion_date, :requirement_id, :user_id, :group_id)
+    end
+
+    def get_requirement_name(checkpoint)
+      Requirement.find_by(id: checkpoint.requirement_id).name
     end
 end
