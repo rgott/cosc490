@@ -74,14 +74,6 @@ Section.create(category_id: '4', name: 'Community Service', number: '2')
 Requirement.create(section_id: '7', name: 'Service Hours', description: 'None', amt_goal: 100.00, order_number: 1, is_event_oriented: 1)
 
 
-# Category 5
-
-Category.create(name: 'Presentation', number: '5')
-
-Section.create(category_id: '5', name: 'Content', number: '1')
-
-Section.create(category_id: '5', name: 'Delivery', number: '2')
-
 ######
 
 d = DateTime.new(2017,11,19,8,37,48,"-06:00")
