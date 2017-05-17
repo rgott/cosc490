@@ -6,12 +6,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:requirement_id) %></th>
       <th><%= model_class.human_attribute_name(:comment) %></th>
       <th><%= model_class.human_attribute_name(:completion_date) %></th>
-      <th><%= model_class.human_attribute_name(:requirement_id) %></th>
       <th><%= model_class.human_attribute_name(:user_id) %></th>
-      <th><%= model_class.human_attribute_name(:group_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -19,12 +17,10 @@
   <tbody>
     <% @checkpoints.each do |checkpoint| %>
       <tr>
-        <td><%= link_to checkpoint.id, checkpoint_path(checkpoint) %></td>
+        <td><%= get_requirement_name(checkpoint) %></td>
         <td><%= checkpoint.comment %></td>
         <td><%= checkpoint.completion_date %></td>
-        <td><%= get_requirement_name(checkpoint) %></td>
-        <td><%= checkpoint.user_id %></td>
-        <td><%= checkpoint.group_id %></td>
+        <td><%= User.find(checkpoint.user_id).email %></td>
         <td><%=l checkpoint.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
