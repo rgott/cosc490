@@ -3,7 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $backgroundColor: #2A3F54;
-
+.label-cell {
+  background-color: #777;
+  width: 10px;
+}
 .navbar-svg
 {
   margin:-15px;

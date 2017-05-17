@@ -1,32 +1,4 @@
 <div class="container">
   <h1>Academics</h1>
-  <ul class="list-group">
-    <% @requirement.each_with_index do |r| %>
-        <li class="list-group-item">
-          <span class="label label-default"><%= r.section_id %>.<%= r.order_number %></span>
-          <span class="description"><%= r.name %></span>
-          <div class="pull-right circularProgressBorder">
-            <div class="pull-right">
-              <%
-                if(r.is_event_oriented == 1)
-                  progress = Event.where(:requirement_id => r.id).sum("requirement_progress").to_f
-                else
-                  progress = Requirement.where(id: [r.id]).pluck(:amt_goal).sum.to_f
-                  puts progress
-                end
-
-                percentComplete	= progress/r.amt_goal
-                if percentComplete > 1 then
-                  percentComplete = 1
-                end
-
-              %>
-              <div class="circularProgress --<%= (percentComplete * 100).to_i %> pull-right">
-                <div class="circularProgress__overlay"></div>
-              </div>
-            </div>
-            <p class="pull-right"><%= progress.truncate %>/<%= r.amt_goal.truncate %>&nbsp;</p>&nbsp;
-          </div>
-    <% end %>
-  </ul>
+  <%= render :partial => 'main/requirement', :object => @requirement %>
 </div>
