@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   get 'main/chapter_management'
   get 'main/community_involvement'
   get 'main/member_development'
-  get 'main/presentation'
 
   resources :events
 
