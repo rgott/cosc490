@@ -7,11 +7,9 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:requirement_id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:date) %></th>
-      <th>Req #</th>
-      <th><%= model_class.human_attribute_name(:requirement_id) %></th>
       <th><%= model_class.human_attribute_name(:requirement_progress) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -20,11 +18,9 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= link_to event.id, event_path(event) %></td>
+        <td><%= Requirement.find_by_id(event.requirement_id).name %></td>
         <td><%= event.name %></td>
         <td><%= event.date %></td>
-        <td><%= event.requirement_id %></td>
-        <td><%= Requirement.find_by_id(event.requirement_id).name %></td>
         <td><%= event.requirement_progress %></td>
         <td><%=l event.created_at %></td>
         <td>
