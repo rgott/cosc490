@@ -34,6 +34,8 @@
                 <ul class="dropdown-menu">
                   <% if User.find(session[:user_id]).role == Role.find_by_name('admin') %>
                     <li><%= link_to 'Admin Dashboard', admin_index_url %></li>
+                  <% else %>
+                    My Group: <%= User.find(session[:user_id]).group %>
                   <% end %>
                   <li><a href="<%= logout_path %>">Logout</a></li>
                 </ul>
