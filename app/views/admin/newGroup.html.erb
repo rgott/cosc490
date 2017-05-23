@@ -1,0 +1,14 @@
+<div class="container">
+<%= form_tag :action => 'createGroup' do %>
+    <% if flash[:alert] %>
+        <p id="notice"><%= flash[:alert] %></p>
+    <% end %>
+    <div class="field">
+      <%= label_tag 'Group Name' %><br>
+      <%= text_field_tag :name %>
+    </div>
+    <div class="actions">
+      <%= submit_tag %>
+    </div>
+<% end %>
+</div>

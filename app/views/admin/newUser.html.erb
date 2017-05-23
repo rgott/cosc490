@@ -1,0 +1,22 @@
+<div class="container">
+<%= form_tag :action => 'createUser' do  %>
+    <% if flash[:alert] %>
+        <p id="notice"><%= flash[:alert] %></p>
+    <% end %>
+    Group
+    <%= select_tag(:group, options_from_collection_for_select(@group, "id", "name" ))  %>
+    <%= link_to 'New Group', admin_newGroup_url %>
+    <div class="field">
+      <%= label_tag :user_email_area %><br>
+      <%= text_area_tag :user_email_area %>
+    </div>
+    <div class="field">
+      <%= label_tag :officer_email_area %><br>
+      <%= text_area_tag :officer_email_area %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag %>
+    </div>
+<% end %>
+</div>

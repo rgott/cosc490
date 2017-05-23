@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
 
       if user.role == Role.find_by_name('admin')
-        redirect_to admin_url
+        redirect_to admin_index_url
       else
         redirect_to main_index_url
       end
