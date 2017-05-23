@@ -24,6 +24,7 @@ Role.create(name: 'admin')
 
 User.create(role_id: '1', group_id: '1', first_name: 'Alto', last_name: 'Bravo', password: 'abc123', email: 'student1@gmail.com')
 User.create(role_id: '2', group_id: '1', first_name: 'Charlie', last_name: 'Decker', password: 'def456', email: 'student2@gmail.com')
+User.create(role_id: '1', group_id: '1', first_name: 't', last_name: 't', password: 't', email: 't@t.t')
 
 # admins have no groups
 User.create(role_id: '3',                first_name: 'admin', last_name: 'admin', password: 'admin', email: 'admin@gmail.com')
